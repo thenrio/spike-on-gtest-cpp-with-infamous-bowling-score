@@ -10,7 +10,8 @@ int score(const vector<int>& throws) {
 	int score = 0;
 	for (int frame = 0, current_throw = 0; frame < 10; ++frame) {
 		score += throws[current_throw] + throws[current_throw+1];
-		if(is_strike(throws[current_throw])) {
+		bool strike = is_strike(throws[current_throw]);
+		if(strike) {
 			score += throws[current_throw+2];
 			current_throw += 1;
 		}
