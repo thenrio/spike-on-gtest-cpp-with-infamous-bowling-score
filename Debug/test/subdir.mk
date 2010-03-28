@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CC_SRCS += \
-../test/bowling_score_test.cc 
+../test/bowling_score_test.cc \
+../test/suite.cc 
 
 OBJS += \
-./test/bowling_score_test.o 
+./test/bowling_score_test.o \
+./test/suite.o 
 
 CC_DEPS += \
-./test/bowling_score_test.d 
+./test/bowling_score_test.d \
+./test/suite.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

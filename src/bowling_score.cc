@@ -9,6 +9,3 @@
 int score(const vector<int>& throws) {
 	return 0;
 }
-
-int main() {
-}
