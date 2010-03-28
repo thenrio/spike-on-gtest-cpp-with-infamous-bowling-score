@@ -22,6 +22,16 @@ TEST(score, shouldScoreSumOfThrowsForRegularFrames) {
 	ASSERT_EQ(37, score(throws));
 }
 
+TEST(score, strikeFrameShouldBe10Plus2NextThrows) {
+	int scores[19] = {10, 7, 2, 0, 0, 0, 0, 0, 0,
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	vector<int> throws(19);
+	for(int i = 0; i < 19; ++i) {
+		throws[i] = scores[i];
+	}
+	ASSERT_EQ(28, score(throws));
+}
+
 TEST(is_strike, throwOf10ShouldBeStrike) {
 	ASSERT_TRUE(is_strike(10));
 	ASSERT_FALSE(is_strike(2));
