@@ -7,12 +7,12 @@
 #include "bowling_score.h"
 #include <gtest/gtest.h>
 
-TEST(bowling_score, allGuttersShouldScore0) {
+TEST(score, allGuttersShouldScore0) {
 	vector<int> allGutters(20);
 	ASSERT_EQ(0, score(allGutters));
 }
 
-TEST(bowling_score, shouldScoreSumOfThrows) {
+TEST(score, shouldScoreSumOfThrowsForRegularFrames) {
 	int scores[20] = {2, 0, 0, 0, 1, 0, 4, 0, 0, 5,
 			9, 0, 4, 0, 0, 0, 4, 0, 8, 0};
 	vector<int> throws(20);
