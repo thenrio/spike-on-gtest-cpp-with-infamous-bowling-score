@@ -3,3 +3,4 @@
 .settings
 *.o
 *.d
+Debug/bowling_score
