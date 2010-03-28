@@ -21,3 +21,7 @@ TEST(score, shouldScoreSumOfThrowsForRegularFrames) {
 	}
 	ASSERT_EQ(37, score(throws));
 }
+
+TEST(is_strike, throwOf10ShouldBeStrike) {
+	ASSERT_TRUE(is_strike(10));
+}

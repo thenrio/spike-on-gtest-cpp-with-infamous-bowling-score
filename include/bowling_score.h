@@ -13,4 +13,6 @@ using namespace std;
 
 int score(const vector<int>& throws);
 
+bool is_strike(int a_throw);
+
 #endif /* BOWLING_SCORE_H_ */
