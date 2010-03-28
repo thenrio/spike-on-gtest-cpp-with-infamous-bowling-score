@@ -24,4 +24,5 @@ TEST(score, shouldScoreSumOfThrowsForRegularFrames) {
 
 TEST(is_strike, throwOf10ShouldBeStrike) {
 	ASSERT_TRUE(is_strike(10));
+	ASSERT_FALSE(is_strike(2));
 }
