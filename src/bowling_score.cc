@@ -5,7 +5,9 @@
  *      Author: thenrio
  */
 #include "bowling_score.h"
+#include <numeric>
+using std::accumulate;
 
 int score(const vector<int>& throws) {
-	return 0;
+	return accumulate(throws.begin(), throws.end(), 0);
 }
