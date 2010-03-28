@@ -13,5 +13,5 @@ int score(const vector<int>& throws) {
 }
 
 bool is_strike(int a_throw) {
-	return true;
+	return (a_throw == 10);
 }
