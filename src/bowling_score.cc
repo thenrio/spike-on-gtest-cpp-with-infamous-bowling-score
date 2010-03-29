@@ -12,10 +12,13 @@ const int NUMBER_OF_PINS = 10;
 int score(const vector<int>& throws) {
 	int score = 0;
 	for (int frame = 0, current_throw = 0; frame < NUMBER_OF_FRAMES; ++frame) {
-		score += throws[current_throw] + throws[current_throw+1];
 		bool strike = is_strike(throws[current_throw]);
-		if(strike) {
+		bool spare = is_spare(throws[current_throw], throws[current_throw + 1]);
+		score += throws[current_throw] + throws[current_throw+1];
+		if(strike || spare) {
 			score += throws[current_throw+2];
+		}
+		if(strike) {
 			current_throw += 1;
 		}
 		else {
