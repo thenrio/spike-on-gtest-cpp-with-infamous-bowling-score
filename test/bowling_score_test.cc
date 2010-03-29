@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 
 void init(vector<int>& throws, int* values) {
-	for(int i = 0; i < throws.size(); ++i) {
+	for(unsigned int i = 0; i < throws.size(); ++i) {
 		throws[i] = values[i];
 	}
 }
@@ -39,11 +39,11 @@ TEST(score, spareFrameShouldScore10PlusNextThrow) {
 	ASSERT_EQ(26, score(throws));
 }
 
-TEST(is_strike, throwOf10ShouldBeStrike) {
+TEST(is_strike, allPinsInOnceShouldBeStrike) {
 	ASSERT_TRUE(is_strike(10));
 }
 
-TEST(is_strike, underPinsShouldNotBeStrike) {
+TEST(is_strike, notAllPinsInOnceShouldNotBeStrike) {
 	ASSERT_FALSE(is_strike(2));
 }
 
@@ -51,6 +51,6 @@ TEST(is_spare, numberOfPinsInTwoShouldBeSpare) {
 	ASSERT_TRUE(is_spare(8, 2));
 }
 
-TEST(is_spare, lessThanNumberOfPinsInTwoShouldNotBeSpare) {
+TEST(is_spare, notAllPinsInTwoShouldNotBeSpare) {
 	ASSERT_FALSE(is_spare(8, 1));
 }
