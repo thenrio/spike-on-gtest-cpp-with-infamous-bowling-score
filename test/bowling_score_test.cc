@@ -32,6 +32,13 @@ TEST(score, strikeFrameShouldScore10Plus2NextThrows) {
 	ASSERT_EQ(28, score(throws));
 }
 
+TEST(score, spareFrameShouldScore10PlusNextThrow) {
+	vector<int> throws(20);
+	init(throws, (int[]){8, 2, 7, 2, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
+	ASSERT_EQ(26, score(throws));
+}
+
 TEST(is_strike, throwOf10ShouldBeStrike) {
 	ASSERT_TRUE(is_strike(10));
 	ASSERT_FALSE(is_strike(2));
