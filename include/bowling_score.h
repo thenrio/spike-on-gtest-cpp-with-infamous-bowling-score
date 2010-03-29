@@ -15,4 +15,6 @@ int score(const vector<int>& throws);
 
 bool is_strike(int a_throw);
 
+bool is_spare(int first, int second);
+
 #endif /* BOWLING_SCORE_H_ */

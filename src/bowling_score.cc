@@ -6,9 +6,12 @@
  */
 #include "bowling_score.h"
 
+const int NUMBER_OF_FRAMES = 10;
+const int NUMBER_OF_PINS = 10;
+
 int score(const vector<int>& throws) {
 	int score = 0;
-	for (int frame = 0, current_throw = 0; frame < 10; ++frame) {
+	for (int frame = 0, current_throw = 0; frame < NUMBER_OF_FRAMES; ++frame) {
 		score += throws[current_throw] + throws[current_throw+1];
 		bool strike = is_strike(throws[current_throw]);
 		if(strike) {
@@ -22,6 +25,10 @@ int score(const vector<int>& throws) {
 	return score;
 }
 
+bool is_spare(int first, int second) {
+	return (first+second == NUMBER_OF_PINS);
+}
+
 bool is_strike(int a_throw) {
-	return (a_throw == 10);
+	return (a_throw == NUMBER_OF_PINS);
 }

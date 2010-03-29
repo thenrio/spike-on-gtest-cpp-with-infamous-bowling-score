@@ -43,3 +43,8 @@ TEST(is_strike, throwOf10ShouldBeStrike) {
 	ASSERT_TRUE(is_strike(10));
 	ASSERT_FALSE(is_strike(2));
 }
+
+TEST(is_spare, sumOf10ShouldBeSpare) {
+	ASSERT_TRUE(is_spare(8, 2));
+	ASSERT_FALSE(is_spare(8, 1));
+}
