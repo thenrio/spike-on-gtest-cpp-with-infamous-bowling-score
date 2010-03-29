@@ -41,10 +41,16 @@ TEST(score, spareFrameShouldScore10PlusNextThrow) {
 
 TEST(is_strike, throwOf10ShouldBeStrike) {
 	ASSERT_TRUE(is_strike(10));
+}
+
+TEST(is_strike, underPinsShouldNotBeStrike) {
 	ASSERT_FALSE(is_strike(2));
 }
 
-TEST(is_spare, sumOf10ShouldBeSpare) {
+TEST(is_spare, numberOfPinsInTwoShouldBeSpare) {
 	ASSERT_TRUE(is_spare(8, 2));
+}
+
+TEST(is_spare, lessThanNumberOfPinsInTwoShouldNotBeSpare) {
 	ASSERT_FALSE(is_spare(8, 1));
 }
