@@ -7,28 +7,28 @@
 #include "bowling_score.h"
 #include <gtest/gtest.h>
 
+void init(vector<int>& throws, int* values) {
+	for(int i = 0; i < throws.size(); ++i) {
+		throws[i] = values[i];
+	}
+}
+
 TEST(score, allGuttersShouldScore0) {
 	vector<int> allGutters(20);
 	ASSERT_EQ(0, score(allGutters));
 }
 
 TEST(score, shouldScoreSumOfThrowsForRegularFrames) {
-	int scores[20] = {2, 0, 0, 0, 1, 0, 4, 0, 0, 5,
-			9, 0, 4, 0, 0, 0, 4, 0, 8, 0};
 	vector<int> throws(20);
-	for(int i = 0; i < 20; ++i) {
-		throws[i] = scores[i];
-	}
+	init(throws, (int[]){2, 0, 0, 0, 1, 0, 4, 0, 0, 5,
+			9, 0, 4, 0, 0, 0, 4, 0, 8, 0});
 	ASSERT_EQ(37, score(throws));
 }
 
-TEST(score, strikeFrameShouldBe10Plus2NextThrows) {
-	int scores[19] = {10, 7, 2, 0, 0, 0, 0, 0, 0,
-			0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+TEST(score, strikeFrameShouldScore10Plus2NextThrows) {
 	vector<int> throws(19);
-	for(int i = 0; i < 19; ++i) {
-		throws[i] = scores[i];
-	}
+	init(throws, (int[]){10, 7, 2, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
 	ASSERT_EQ(28, score(throws));
 }
 
